@@ -775,11 +775,11 @@ svg [data-s].dim{opacity:.12}
       <img class="logo-light" src="assets/marslab.png" alt="MARS Lab" width="471" height="160">
       <span>© 2026 <a href="https://marsyang.site/">MARS Lab</a>, Nanyang Technological University</span>
     </div>
-    <div class="fr"><span class="views" id="views" hidden></span><a href="#top">Top ↑</a></div>
+    <div class="fr"><span class="views" id="views">– views</span><a href="#top">Top ↑</a></div>
   </div>
 </footer>
 <script>
-/* page views from the free Abacus counter: one hit per browser session, only on the live site; hidden if the service fails */
+/* page views from the free Abacus counter: one hit per browser session, only on the live site; always shown (user) */
 (() => {
   const el = document.getElementById('views'), live = location.hostname === 'ntumars.github.io';
   let seen = false; try { seen = sessionStorage.getItem('ode-viewed') === '1'; } catch (e) {}
@@ -787,7 +787,7 @@ svg [data-s].dim{opacity:.12}
   fetch(url).then(r => r.ok ? r.json() : null).then(d => {
     if (!d || typeof d.value !== 'number') return;
     if (live && !seen) { try { sessionStorage.setItem('ode-viewed', '1'); } catch (e) {} }
-    el.textContent = d.value.toLocaleString('en-US') + (d.value === 1 ? ' view' : ' views'); el.hidden = false;
+    el.textContent = d.value.toLocaleString('en-US') + (d.value === 1 ? ' view' : ' views');
   }).catch(() => {});
 })();
 </script>
