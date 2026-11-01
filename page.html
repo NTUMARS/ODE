@@ -132,7 +132,7 @@ nav.top.on .theme{border-color:var(--line-2);background:var(--surface);color:var
 .cover-v .side{display:none}  /* two extra columns, shown only on wide screens instead of dark side bars (user, 2026-11-01) */
 @container (min-aspect-ratio: 7/4){ .cover-v .side{display:block} .cover-v .crow{grid-template-columns:repeat(6,minmax(0,1fr))} .cover-v .cgrid{width:min(100cqw - 16px,(89cqh - 40px) * 24 / 9)} }
 .cover .tagline{margin-top:14px;font:500 clamp(19px,2.1vw,30px)/1.2 var(--display);letter-spacing:-.02em;color:rgba(255,255,255,.9);text-shadow:0 2px 24px rgba(0,0,0,.4)}
-@media (max-width:640px){ .cover-v .crow{grid-template-columns:repeat(2,minmax(0,1fr))} .cover-v .cgrid{width:min(100cqw - 16px,(89cqh - 64px) * 32 / 72)} }
+@media (max-width:640px){ .cover-v .crow{grid-template-columns:repeat(2,minmax(0,1fr));gap:4px} .cover-v .cgrid{width:calc(100cqw - 8px);gap:4px} }  /* two tiles across the full phone width (user) */
 .cover-shade{position:absolute;inset:0;background:
   linear-gradient(180deg,rgba(8,14,20,.58) 0%,rgba(8,14,20,0) 24%),
   linear-gradient(180deg,rgba(8,14,20,0) 34%,rgba(8,14,20,.62) 72%,rgba(8,14,20,.9) 100%),
