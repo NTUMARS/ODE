@@ -120,6 +120,8 @@ out['tasks'] = {
     'cup': {'ODE': 85, 'FM-DiT': 0, 'DDIM-UNet': 0},
     'pills': {'ODE': 85, 'FM-DiT': 50, 'DDIM-UNet': 0},
     'cube': {'ODE': 65, 'FM-DiT': 0, 'DDIM-UNet': 0},
+    'toy': {'ODE': 50, 'GR00T': 0},  # humanoid, 10 trials (user, 2026-11-01)
+    'hmw': {'ODE': 40, 'GR00T': 0},
 }
 
 # LIBERO-plus zero-shot
