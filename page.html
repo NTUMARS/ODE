@@ -291,6 +291,8 @@ footer .colophon .logo-light{display:none}
 footer .colophon span{display:block;line-height:1.5}
 footer a{color:var(--muted);text-decoration:none;border-bottom:1px solid var(--line-2);transition:color .2s var(--ease),border-color .2s var(--ease)}
 footer a:hover{color:var(--ink);border-bottom-color:var(--ink)}
+footer .views{font:500 12.5px/1.5 var(--mono);letter-spacing:.06em;color:var(--muted)}  /* page views (user, 2026-11-01) */
+footer .fr{display:flex;align-items:center;gap:22px}
 
 /* lightbox */
 .lb{position:fixed;inset:0;z-index:20;background:rgba(10,16,22,.86);-webkit-backdrop-filter:blur(10px);backdrop-filter:blur(10px);display:grid;place-items:center;padding:max(20px,env(safe-area-inset-top,0px)) max(20px,env(safe-area-inset-right,0px)) max(20px,env(safe-area-inset-bottom,0px)) max(20px,env(safe-area-inset-left,0px));cursor:zoom-out}
@@ -765,9 +767,22 @@ svg [data-s].dim{opacity:.12}
       <img class="logo-light" src="assets/marslab.png" alt="MARS Lab" width="471" height="160">
       <span>© 2026 <a href="https://marsyang.site/">MARS Lab</a>, Nanyang Technological University</span>
     </div>
-    <a href="#top">Top ↑</a>
+    <div class="fr"><span class="views" id="views" hidden></span><a href="#top">Top ↑</a></div>
   </div>
 </footer>
+<script>
+/* page views from the free Abacus counter: one hit per browser session, only on the live site; hidden if the service fails */
+(() => {
+  const el = document.getElementById('views'), live = location.hostname === 'ntumars.github.io';
+  let seen = false; try { seen = sessionStorage.getItem('ode-viewed') === '1'; } catch (e) {}
+  const url = 'https://abacus.jasoncameron.dev/' + (live && !seen ? 'hit' : 'get') + '/ntumars-ode/visits';
+  fetch(url).then(r => r.ok ? r.json() : null).then(d => {
+    if (!d || typeof d.value !== 'number') return;
+    if (live && !seen) { try { sessionStorage.setItem('ode-viewed', '1'); } catch (e) {} }
+    el.textContent = d.value.toLocaleString('en-US') + (d.value === 1 ? ' view' : ' views'); el.hidden = false;
+  }).catch(() => {});
+})();
+</script>
 
 <div class="lb" id="lb" hidden><img id="lb-img" alt=""></div>
 
