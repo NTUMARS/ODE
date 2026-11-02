@@ -1679,7 +1679,7 @@ function initLenis(){
 addEventListener('load', initLenis);
 
 // reveal: blocks rise into place the first time they are seen, siblings in a grid one after another
-const picks = '.motto .wrap, section > .wrap > .kicker, section > .wrap > h2.sec, section > .wrap > .lede, .pair > .stage, .numbers, .numbers + .note, .block > h3, .block > .lede, .rlvids, .mmvids, .charts > .chart, .block > .chart, .player, .mstep, .cite-row, pre.bib, footer .wrap';
+const picks = '.motto .wrap, section > .wrap > .kicker, section > .wrap > h2.sec, section > .wrap > .lede, .pair > .stage, .numbers, .numbers + .note, .block > h3, .block > .lede, .rlvids, .mmvids, .charts > .chart, .block > .chart, .player, .mstep, .cite-row, pre.bib';  // the footer is not revealed: at the page end it never left the bottom margin and stayed hidden (user)
 const els = document.querySelectorAll(picks);
 if (!reduce && 'IntersectionObserver' in window){
   els.forEach(el => { el.classList.add('rv'); const p = el.parentElement;
