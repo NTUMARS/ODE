@@ -230,6 +230,7 @@ h4{font:600 19px/1.3 var(--display);letter-spacing:-.018em;margin:0}
 .clip .why{position:absolute;left:0;right:0;bottom:0;font-size:12px;line-height:1.3;color:#fff;padding:14px 8px 6px;background:linear-gradient(transparent,rgba(0,0,0,.65))}
 .rlvids{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:14px}
 .rlclip{align-self:center}
+.rlvids{margin-bottom:22px}
 .robot{display:flex;align-items:baseline;gap:14px;flex-wrap:wrap;margin:38px 0 14px;padding-top:18px;border-top:1px solid var(--line)}
 .robot h4{font:600 22px/1.2 var(--display);letter-spacing:-.02em;color:var(--ink)}
 .robot p{font-size:15px;color:var(--soft)}
@@ -542,12 +543,21 @@ svg [data-s].dim{opacity:.12}
       <figure class="chart wide" id="ch-rl">
         <p class="ct">Actor of SuperMimic in reinforcement learning</p>
         <div class="legend"></div>
-        <div class="cells c3">
-          <figure class="clip rlclip"><video data-src="assets/video/rl_supermimic.mp4" muted loop playsinline preload="none" aria-label="Simulated G1 humanoid tracking human motions with the ODE actor of SuperMimic"></video><span class="lab ours">ODE actor</span></figure>
+        <div class="cells rlvids">
+          <figure class="clip"><video data-src="assets/video/dance_real_1.mp4" poster="assets/video/dance_real_1.jpg" muted loop playsinline preload="none" aria-label="Real Unitree G1 dancing with the ODE actor trained in simulation"></video><span class="lab ours">Real G1</span></figure>
+          <figure class="clip"><video data-src="assets/video/dance_real_2.mp4" poster="assets/video/dance_real_2.jpg" muted loop playsinline preload="none" aria-label="Real Unitree G1 dancing with the ODE actor trained in simulation"></video><span class="lab ours">Real G1</span></figure>
+          <figure class="clip"><video data-src="assets/video/dance_real_3.mp4" poster="assets/video/dance_real_3.jpg" muted loop playsinline preload="none" aria-label="Real Unitree G1 dancing with the ODE actor trained in simulation"></video><span class="lab ours">Real G1</span></figure>
+          <figure class="clip"><video data-src="assets/video/dance_real_4.mp4" poster="assets/video/dance_real_4.jpg" muted loop playsinline preload="none" aria-label="Real Unitree G1 dancing with the ODE actor trained in simulation"></video><span class="lab ours">Real G1</span></figure>
+          <figure class="clip"><video data-src="assets/video/rl_sim_1.mp4" poster="assets/video/rl_sim_1.jpg" muted loop playsinline preload="none" aria-label="Simulated G1 tracking a dance clip with the ODE actor"></video><span class="lab">Dance</span></figure>
+          <figure class="clip"><video data-src="assets/video/rl_sim_2.mp4" poster="assets/video/rl_sim_2.jpg" muted loop playsinline preload="none" aria-label="Simulated G1 tracking a fall and get up clip with the ODE actor"></video><span class="lab">Fall and get up</span></figure>
+          <figure class="clip"><video data-src="assets/video/rl_sim_3.mp4" poster="assets/video/rl_sim_3.jpg" muted loop playsinline preload="none" aria-label="Simulated G1 tracking a jump clip with the ODE actor"></video><span class="lab">Jump</span></figure>
+          <figure class="clip"><video data-src="assets/video/rl_sim_4.mp4" poster="assets/video/rl_sim_4.jpg" muted loop playsinline preload="none" aria-label="Simulated G1 tracking a sprint clip with the ODE actor"></video><span class="lab">Sprint</span></figure>
+        </div>
+        <div class="cells c2 rlcharts">
           <div class="chart mini" id="ch-rl-train"><p class="ct">Gain in training return</p><div class="plot"></div></div>
           <div class="chart mini" id="ch-rl-eval"><p class="ct">Gain in evaluation return</p><div class="plot"></div></div>
         </div>
-        <figcaption><b>Figure 5.</b> Gain of the ODE actor over the direct-action actor of SuperMimic, which learns through a world model, on whole-body tracking of 40 LAFAN1 clips with a simulated G1 humanoid, from the means over three random seeds, over wall-clock hours on one GPU. Replacing only the actor raises the training return by 37% after 0.75 hours and the return on all clips by 30% after 0.4 hours and still 5% after 2.9 hours.</figcaption>
+        <figcaption><b>Figure 5.</b> Top, the ODE actor trained in simulation and deployed directly on a real G1 to track a dance. Middle, the same actor tracking four LAFAN1 clips in simulation. Bottom, gain of the ODE actor over the direct-action actor of SuperMimic, which learns through a world model, on whole-body tracking of 40 LAFAN1 clips with a simulated G1 humanoid, from the means over three random seeds, over wall-clock hours on one GPU. Replacing only the actor raises the training return by 37% after 0.75 hours and the return on all clips by 30% after 0.4 hours and still 5% after 2.9 hours.</figcaption>
       </figure>
     </article>
 
