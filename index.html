@@ -1058,7 +1058,7 @@ function rich(g, parts, x, y, col, size, weight = 600, family = MONO, italic = t
     const col = kind === 'disc' ? c.teal : c.blue, y = oy + 112;
     txt(g, kind === 'disc' ? 'Direct-action policies' : 'ODE policy (ours)', ox + 270, oy + 20, col, 19, 700, 'center', 'Inter Tight, Segoe UI, sans-serif');
     const lit = prog < 3 && prog % 1 < 0.25 ? 1 : 0;      // the encoder runs once at the start of each chunk
-    inputs(g, c, ox + 38, y, kind === 'disc' ? 'o, l, s' : 'o, l');
+    inputs(g, c, ox + 38, y, 'o, l, s');  // proprioception in the condition for both (default configuration)
     arrow(g, ox + 62, y, ox + 86, y, c.muted); encoder(g, c, ox + 90, y); arrow(g, ox + 172, y, ox + 192, y, c.muted);
     tokens(g, ox + 196, y, col, lit); txt(g, 'z', ox + 203, y + 34, c.ink, 13, 500, 'center', MONO, true);
     arrow(g, ox + 216, y, ox + 240, y, c.muted);
