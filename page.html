@@ -608,7 +608,7 @@ svg [data-s].dim{opacity:.12}
         <figure class="chart" id="ch-time">
           <p class="ct">Speed and success on LIBERO</p>
           <div class="plot"></div>
-          <figcaption><b>Figure 7.</b> Time per chunk of 8 actions against success at epoch 100. ODE policy takes 5.7 ms with <i>Euler</i>, 10.8× faster than FM-DiT, and keeps its success with every solver.</figcaption>
+          <figcaption><b>Figure 7.</b> Time per chunk of 8 actions against success at epoch 100. ODE policy takes 5.7 ms with <i>Euler</i>, 10.8× faster than FM-DiT, and keeps its success with every solver. Whiskers show the standard deviation over three random seeds.</figcaption>
         </figure>
         <figure class="chart" id="ch-scale">
           <p class="ct">At scale, in π<sub>0.5</sub></p>
@@ -1434,9 +1434,9 @@ function scatterChart(host, o){
     if (o.band){ const x = X(o.band.from); sv('rect', { x, y: A.m.t, width: W - A.m.r - x, height: H - A.m.t - A.m.b, class: 'shade' }, svg);
       sv('text', { x: (x + W - A.m.r) / 2, y: A.m.t + 16, class: 'note', 'text-anchor': 'middle' }, svg).textContent = o.band.label; }
     o.pts.forEach(p => { const g = sv('g', { 'data-s': p.key }, plot);
+      sv('circle', { cx: X(p.x), cy: Y(p.y), r: p.ours ? 6.5 : 5.5, fill: p.color }, g);
       if (p.xe) sv('line', { x1: X(p.x - p.xe), x2: X(p.x + p.xe), y1: Y(p.y), y2: Y(p.y), class: 'err' }, g);
       if (p.ye) sv('line', { x1: X(p.x), x2: X(p.x), y1: Y(p.y - p.ye), y2: Y(p.y + p.ye), class: 'err' }, g);
-      sv('circle', { cx: X(p.x), cy: Y(p.y), r: p.ours ? 6.5 : 5.5, fill: p.color }, g);
       sv('text', { x: X(p.x) + (p.dx ?? 9), y: Y(p.y) + (p.dy ?? 0), class: 'plab' + (p.ours ? ' strong' : ''), 'text-anchor': p.anchor || 'start', 'dominant-baseline': 'middle' }, g).textContent = p.name;
       const hit = sv('circle', { cx: X(p.x), cy: Y(p.y), r: 14, fill: 'transparent' }, svg);
       hit.addEventListener('mousemove', e => showTip(`<b>${p.name}</b><div>Time per chunk<span>${fmt1(p.x)} ms</span></div><div>Success<span>${fmt1(p.y)}%</span></div>`, e.clientX, e.clientY));
@@ -1496,7 +1496,7 @@ if (D){
     g('ch-rl-eval', D.rl_gain_eval, -10, 40, [-10, 0, 10, 20, 30, 40]); }
   // 02 inference time vs success on LIBERO
   { const T = D.time; const P = (k, name, o = {}) => ({ key: k, name, color: COL[k.split(' ')[0]], x: T[k][0], xe: T[k][1], y: T[k][2], ye: T[k][3], ...o });
-    scatterChart(C('ch-time'), { pts: [P('ODE-UNet Euler', 'ODE, Euler', { ours: true, dy: -14, dx: -6 }), P('ODE-UNet RK2', 'RK2', { ours: true, dy: 14, dx: -2 }), P('ODE-UNet', 'RK4', { ours: true }),
+    scatterChart(C('ch-time'), { pts: [P('ODE-UNet Euler', 'ODE, Euler', { ours: true, dy: 16, dx: -4, anchor: 'end' }), P('ODE-UNet RK2', 'RK2', { ours: true, dy: -15, dx: -4 }), P('ODE-UNet', 'RK4', { ours: true, dx: 10 }),
         P('A2A-DiT', 'A2A-DiT', { dy: 14, dx: -10, anchor: 'end' }), P('FM-DiT', 'FM-DiT', { dy: -14, dx: -4, anchor: 'end' }), P('FM-UNet', 'FM-UNet', { dy: 14, dx: -10, anchor: 'end' }),
         P('DDPM-DiT', 'DDPM-DiT', { anchor: 'end', dx: -10 }), P('DDPM-UNet', 'DDPM-UNet', { anchor: 'end', dx: -10 }), P('ACT', 'ACT', { dy: 0 })],
       x: { min: 2, max: 2000, log: true, ticks: [2, 10, 100, 1000], label: 'Time per chunk of 8 actions (ms, log scale)' },
@@ -1521,7 +1521,7 @@ if (D){
       left: 108, x: { min: 0, max: 0.25, ticks: [0, 0.1, 0.2], label: 'π0.5 command change at boundaries' } }); }
   // 03 LIBERO-plus
   lineChart(C('ch-plus'), { series: VM.map(m => ({ key: m, name: nm(m), color: COL[m], ours: m === 'ODE-UNet', pts: D.plus[m] })),
-    x: { min: 0.8, max: 125, log: true, ticks: [1, 10, 100], label: 'Training epoch (log scale)', tipname: 'Epoch ' }, y: { min: 0, max: 50, ticks: [0, 10, 20, 30, 40, 50], label: 'Success rate (%)' }, unit: '%' });
+    x: { min: 0.8, max: 125, log: true, ticks: [1, 10, 100], label: 'Training epoch (log scale)', tipname: 'Epoch ' }, y: { min: 0, max: 70, ticks: [0, 10, 20, 30, 40, 50, 60, 70], label: 'Success rate (%)' }, unit: '%' });
   lineChart(C('ch-plus-vla'), { series: SC(D.vla, 'plus', ['ODE', 'FM', 'FM-R']).map(s => s.key === 'ODE' ? { ...s, name: 'ODE (ours), 13.7M' } : { ...s, name: s.name + ', 430M' }),
     x: { min: 0.3, max: 3.1, ticks: [0.5, 1, 1.5, 2, 2.5, 3], label: 'Epoch', tipname: 'Epoch ' }, y: pct, unit: '%' });
   lineChart(C('ch-plus-wam'), { series: SC(D.wam, 'plus', ['ODE', 'A2A', 'FM']),
