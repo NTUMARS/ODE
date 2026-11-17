@@ -29,12 +29,12 @@ out = {}
 
 # LIBERO learning curves, mean and std over three seeds
 d = defaultdict(list)
-for r in read('e1_mean.csv'):
+for r in read('e1_mean_v2.csv'):
     d[r['method']].append([int(r['epoch']), num(r['mean']), num(r['std'])])
 out['libero'] = {m: sorted(v) for m, v in d.items()}
 
 # data and parameter efficiency, ODE vs. FM-DiT
-for key, name, col in (('demos', 'e3_mean.csv', 'demos'), ('size', 'e4_mean.csv', 'size')):
+for key, name, col in (('demos', 'e3_mean_v2.csv', 'demos'), ('size', 'e4_mean_v2.csv', 'size')):
     d = defaultdict(list)
     for r in read(name):
         eps = [k[2:] for k in r if k.startswith('ep')]
@@ -75,9 +75,9 @@ out['rl_gain_train'] = _gain([[num(r['hours']), float(r['ode_mean'])] for r in t
 out['rl_gain_eval'] = _gain(out['rl_eval']['ode'], out['rl_eval']['mlp'])
 
 # inference time vs. success on LIBERO, smoothness over epochs
-out['time'] = {r['method']: [num(r['ms_call']), num(r['ms_call_std']), num(r['sr']), num(r['sr_sd'])] for r in read('e_time.csv')}
+out['time'] = {r['method']: [num(r['ms_call']), num(r['ms_call_std']), num(r['sr']), num(r['sr_sd'])] for r in read('e_time_v2.csv')}
 d = defaultdict(list)
-for r in read('e2_exec.csv'):
+for r in read('e2_exec_v2.csv'):
     d[r['method']].append([int(r['epoch']), num(r['jerk']), num(r['jerk_std'])])
 out['jerk'] = d
 out['vla_exec'] = {r['method']: {k: num(r[k]) for k in ('model', 'head', 'cmd_in', 'cmd_bd', 'action_params_M')} for r in read('vla_exec.csv')}
@@ -103,6 +103,14 @@ out['real'] = {
              'acc_in': {'DDIM-UNet': [2.27, 0.90], 'FM-DiT': [1.50, 0.14], 'ODE': [0.40, 0.04]},
              'acc_demo': [0.72, 0.65], 'acc_max': 7.5,
              'jerk': {'DDIM-UNet': [13.3, 0.8], 'FM-DiT': [15.6, 1.3], 'ODE': [6.0, 0.6]}, 'jerk_demo': 7.6, 'jerk_max': 18},
+    # humanoid pillow task (reports/real/pillow_rollout_comparison_20261114.md): 11 ODE and 10 GR00T rollouts, arm
+    # (14 joints), the demonstrations without a boundary / inside split, inference per chunk on the server
+    'humanoid': {'order': ['GR00T', 'ODE'], 'gpu': 'RTX 4090',
+                 'time': {'GR00T': [67.0, 0], 'ODE': [46.0, 0]},
+                 'acc_bd': {'GR00T': [30.2, 5.2], 'ODE': [7.9, 0.8]},
+                 'acc_in': {'GR00T': [9.8, 1.6], 'ODE': [4.8, 0.9]},
+                 'acc_demo': [19.8, 19.8], 'acc_max': 36,
+                 'jerk': {'GR00T': [147, 33], 'ODE': [82, 9]}, 'jerk_demo': 271, 'jerk_max': 300},
 }
 # success rates (%) over 20 trials of all real-robot tasks (plot_real_franka.py, plot_real_dual_rows.py,
 # plot_real_hand_rows.py); the two-flower task counts trials with at least one flower inserted
@@ -120,19 +128,23 @@ out['tasks'] = {
     'cup': {'ODE': 85, 'FM-DiT': 0, 'DDIM-UNet': 0},
     'pills': {'ODE': 85, 'FM-DiT': 50, 'DDIM-UNet': 0},
     'cube': {'ODE': 65, 'FM-DiT': 0, 'DDIM-UNet': 0},
-    'toy': {'ODE': 50, 'GR00T': 0},  # humanoid, 10 trials (user, 2026-11-01)
-    'hmw': {'ODE': 40, 'GR00T': 0},
+    'towel': {'ODE': 45, 'FM-DiT': 15},
+    'card': {'ODE': 10, 'FM-DiT': 0, 'DDIM-UNet': 0},
+    'toy': {'ODE': 60, 'GR00T': 35},  # humanoid, 20 trials (paper)
+    'hmw': {'ODE': 70, 'GR00T': 30},
+    'basket': {'ODE': 95, 'GR00T': 60},
+    'pillow': {'ODE': 60, 'GR00T': 20},
 }
 
 # LIBERO-plus zero-shot
 d = defaultdict(list)
-for r in read('e6_plus.csv'):
+for r in read('e6_plus_v2.csv'):
     d[r['method']].append([int(r['epoch']), num(r['overall']), num(r['overall_sd'])])
 out['plus'] = d
 
 # 2D navigation
 d = defaultdict(list)
-for r in read('e_nav2d.csv'):
+for r in read('e_nav2d_v2.csv'):
     d[r['method']].append([int(r['epoch']), num(r['sr']), num(r['sr_std']), num(r['gamma']), num(r['gamma_std'])])
 out['nav'] = d
 

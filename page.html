@@ -249,9 +249,10 @@ h4{font:600 19px/1.3 var(--display);letter-spacing:-.018em;margin:0}
 .pairrow{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,2fr);column-gap:48px}  /* two robots side by side, with a gap (user) */
 .rtasks.one{grid-template-columns:minmax(0,1fr)}
 .rtasks.two{grid-template-columns:repeat(2,minmax(0,1fr))}
+.rtasks.r5{grid-template-columns:repeat(5,minmax(0,1fr))}
 .lede.gen2{margin-top:40px}
-@media (max-width:980px){ .rtasks,.rtasks.r3{grid-template-columns:repeat(2,minmax(0,1fr))} .pairrow{grid-template-columns:minmax(0,1fr)} .rtasks.one{grid-template-columns:repeat(2,minmax(0,1fr))} }
-@media (max-width:560px){ .rtasks,.rtasks.r3,.rtasks.one,.rtasks.two{grid-template-columns:minmax(0,1fr)} }
+@media (max-width:980px){ .rtasks,.rtasks.r3,.rtasks.r5{grid-template-columns:repeat(2,minmax(0,1fr))} .pairrow{grid-template-columns:minmax(0,1fr)} .rtasks.one{grid-template-columns:repeat(2,minmax(0,1fr))} }
+@media (max-width:560px){ .rtasks,.rtasks.r3,.rtasks.r5,.rtasks.one,.rtasks.two{grid-template-columns:minmax(0,1fr)} }
 .mmvids{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}
 .mmvids + .note{margin:12px 0 34px;font-size:15px}
 .mmvids + .note b{color:var(--blue)}
@@ -441,9 +442,9 @@ svg [data-s].dim{opacity:.12}
   <div class="cover-v" role="img" aria-label="Autonomous rollouts of ODE policy on a single-arm robot, a dual-arm robot, dexterous hands, and humanoids">
    <div class="cgrid">
     <div class="crow"><div class="tile side"><video data-src="assets/video/cover/towel.mp4" poster="assets/video/cover/towel.jpg" muted loop playsinline preload="none" aria-hidden="true"></video></div><div class="tile"><video src="assets/video/cover/hmw.mp4" poster="assets/video/cover/hmw.jpg" muted loop playsinline autoplay preload="auto" aria-hidden="true"></video></div><div class="tile"><video src="assets/video/cover/microwave.mp4" poster="assets/video/cover/microwave.jpg" muted loop playsinline autoplay preload="auto" aria-hidden="true"></video></div><div class="tile"><video src="assets/video/cover/cup.mp4" poster="assets/video/cover/cup.jpg" muted loop playsinline autoplay preload="auto" aria-hidden="true"></video></div><div class="tile"><video src="assets/video/cover/drawer.mp4" poster="assets/video/cover/drawer.jpg" muted loop playsinline autoplay preload="auto" aria-hidden="true"></video></div><div class="tile side"><video data-src="assets/video/cover/gdance2.mp4" poster="assets/video/cover/gdance2.jpg" muted loop playsinline preload="none" aria-hidden="true"></video></div></div>
-    <div class="crow"><div class="tile side"><video data-src="assets/video/cover/gdance3.mp4" poster="assets/video/cover/gdance3.jpg" muted loop playsinline preload="none" aria-hidden="true"></video></div><div class="tile"><video src="assets/video/cover/pills.mp4" poster="assets/video/cover/pills.jpg" muted loop playsinline autoplay preload="auto" aria-hidden="true"></video></div><div class="tile"><video src="assets/video/cover/toy.mp4" poster="assets/video/cover/toy.jpg" muted loop playsinline autoplay preload="auto" aria-hidden="true"></video></div><div class="tile"><video src="assets/video/cover/flower.mp4" poster="assets/video/cover/flower.jpg" muted loop playsinline autoplay preload="auto" aria-hidden="true"></video></div><div class="tile"><video src="assets/video/cover/key.mp4" poster="assets/video/cover/key.jpg" muted loop playsinline autoplay preload="auto" aria-hidden="true"></video></div><div class="tile side"><video data-src="assets/video/cover/toy2.mp4" poster="assets/video/cover/toy2.jpg" muted loop playsinline preload="none" aria-hidden="true"></video></div></div>
-    <div class="crow"><div class="tile side"><video data-src="assets/video/cover/hmw2.mp4" poster="assets/video/cover/hmw2.jpg" muted loop playsinline preload="none" aria-hidden="true"></video></div><div class="tile"><video src="assets/video/cover/flowers.mp4" poster="assets/video/cover/flowers.jpg" muted loop playsinline autoplay preload="auto" aria-hidden="true"></video></div><div class="tile"><video src="assets/video/cover/sock.mp4" poster="assets/video/cover/sock.jpg" muted loop playsinline autoplay preload="auto" aria-hidden="true"></video></div><div class="tile"><video src="assets/video/cover/gdance1.mp4" poster="assets/video/cover/gdance1.jpg" muted loop playsinline autoplay preload="auto" aria-hidden="true"></video></div><div class="tile"><video src="assets/video/cover/cube_v2.mp4" poster="assets/video/cover/cube_v2.jpg" muted loop playsinline autoplay preload="auto" aria-hidden="true"></video></div><div class="tile side"><video data-src="assets/video/cover/gdance4.mp4" poster="assets/video/cover/gdance4.jpg" muted loop playsinline preload="none" aria-hidden="true"></video></div></div>
-    <div class="crow"><div class="tile side"><video data-src="assets/video/cover/can.mp4" poster="assets/video/cover/can.jpg" muted loop playsinline preload="none" aria-hidden="true"></video></div><div class="tile"><video src="assets/video/cover/insert.mp4" poster="assets/video/cover/insert.jpg" muted loop playsinline autoplay preload="auto" aria-hidden="true"></video></div><div class="tile"><video src="assets/video/cover/loco.mp4" poster="assets/video/cover/loco.jpg" muted loop playsinline autoplay preload="auto" aria-hidden="true"></video></div><div class="tile"><video src="assets/video/cover/drawer2.mp4" poster="assets/video/cover/drawer2.jpg" muted loop playsinline autoplay preload="auto" aria-hidden="true"></video></div><div class="tile"><video src="assets/video/cover/box.mp4" poster="assets/video/cover/box.jpg" muted loop playsinline autoplay preload="auto" aria-hidden="true"></video></div><div class="tile side"><video data-src="assets/video/cover/towel2.mp4" poster="assets/video/cover/towel2.jpg" muted loop playsinline preload="none" aria-hidden="true"></video></div></div>
+    <div class="crow"><div class="tile side"><video data-src="assets/video/cover/gdance3.mp4" poster="assets/video/cover/gdance3.jpg" muted loop playsinline preload="none" aria-hidden="true"></video></div><div class="tile"><video src="assets/video/cover/pills.mp4" poster="assets/video/cover/pills.jpg" muted loop playsinline autoplay preload="auto" aria-hidden="true"></video></div><div class="tile"><video src="assets/video/cover/toy.mp4" poster="assets/video/cover/toy.jpg" muted loop playsinline autoplay preload="auto" aria-hidden="true"></video></div><div class="tile"><video src="assets/video/cover/flower.mp4" poster="assets/video/cover/flower.jpg" muted loop playsinline autoplay preload="auto" aria-hidden="true"></video></div><div class="tile"><video src="assets/video/cover/key.mp4" poster="assets/video/cover/key.jpg" muted loop playsinline autoplay preload="auto" aria-hidden="true"></video></div><div class="tile side"><video data-src="assets/video/cover/pillow.mp4" poster="assets/video/cover/pillow.jpg" muted loop playsinline preload="none" aria-hidden="true"></video></div></div>
+    <div class="crow"><div class="tile side"><video data-src="assets/video/cover/basket.mp4" poster="assets/video/cover/basket.jpg" muted loop playsinline preload="none" aria-hidden="true"></video></div><div class="tile"><video src="assets/video/cover/flowers.mp4" poster="assets/video/cover/flowers.jpg" muted loop playsinline autoplay preload="auto" aria-hidden="true"></video></div><div class="tile"><video src="assets/video/cover/sock.mp4" poster="assets/video/cover/sock.jpg" muted loop playsinline autoplay preload="auto" aria-hidden="true"></video></div><div class="tile"><video src="assets/video/cover/gdance1.mp4" poster="assets/video/cover/gdance1.jpg" muted loop playsinline autoplay preload="auto" aria-hidden="true"></video></div><div class="tile"><video src="assets/video/cover/cube_v2.mp4" poster="assets/video/cover/cube_v2.jpg" muted loop playsinline autoplay preload="auto" aria-hidden="true"></video></div><div class="tile side"><video data-src="assets/video/cover/gdance4.mp4" poster="assets/video/cover/gdance4.jpg" muted loop playsinline preload="none" aria-hidden="true"></video></div></div>
+    <div class="crow"><div class="tile side"><video data-src="assets/video/cover/can.mp4" poster="assets/video/cover/can.jpg" muted loop playsinline preload="none" aria-hidden="true"></video></div><div class="tile"><video src="assets/video/cover/insert.mp4" poster="assets/video/cover/insert.jpg" muted loop playsinline autoplay preload="auto" aria-hidden="true"></video></div><div class="tile"><video src="assets/video/cover/loco.mp4" poster="assets/video/cover/loco.jpg" muted loop playsinline autoplay preload="auto" aria-hidden="true"></video></div><div class="tile"><video src="assets/video/cover/drawer2.mp4" poster="assets/video/cover/drawer2.jpg" muted loop playsinline autoplay preload="auto" aria-hidden="true"></video></div><div class="tile"><video src="assets/video/cover/box.mp4" poster="assets/video/cover/box.jpg" muted loop playsinline autoplay preload="auto" aria-hidden="true"></video></div><div class="tile side"><video data-src="assets/video/cover/card.mp4" poster="assets/video/cover/card.jpg" muted loop playsinline preload="none" aria-hidden="true"></video></div></div>
    </div>
   </div>
   <div class="cover-shade"></div>
@@ -496,11 +497,11 @@ svg [data-s].dim{opacity:.12}
     <p class="kicker">§ 02 — Results</p>
     <h2 class="sec">Results</h2>
     <div class="numbers" aria-label="Headline results">
-      <div class="num"><div class="v">5.9×</div><div class="k">success after one epoch</div></div>
+      <div class="num"><div class="v">5.6×</div><div class="k">success after one epoch</div></div>
       <div class="num"><div class="v">10.8×</div><div class="k">faster inference</div></div>
-      <div class="num"><div class="v">5.4×</div><div class="k">zero-shot success under unseen perturbations</div></div>
-      <div class="num"><div class="v">14/14</div><div class="k">real-robot tasks with the highest success</div></div>
-      <div class="num"><div class="v">3.9×</div><div class="k">mode balance after one epoch</div></div>
+      <div class="num"><div class="v">6.2×</div><div class="k">zero-shot success under unseen perturbations</div></div>
+      <div class="num"><div class="v">18/18</div><div class="k">real-robot tasks with the highest success</div></div>
+      <div class="num"><div class="v">3.3×</div><div class="k">mode balance after one epoch</div></div>
     </div>
     <p class="note">Ratios against flow matching in imitation learning. Hover over any chart for its numbers.</p>
 
@@ -512,13 +513,13 @@ svg [data-s].dim{opacity:.12}
         <figure class="chart" id="ch-libero">
           <p class="ct">Imitation learning on LIBERO</p>
           <div class="legend"></div><div class="plot"></div>
-          <figcaption><b>Figure 1.</b> Success rate over training, four suites trained jointly, mean and std over three random seeds. ODE policy reaches 79.2% after one epoch and 85% after two, where A2A-DiT needs four, the flow and diffusion baselines thirty or more, and ACT never gets there.</figcaption>
+          <figcaption><b>Figure 1.</b> Success rate over training, four suites trained jointly, mean and std over three random seeds. ODE policy reaches 75.8% after one epoch, against at most 43.2%, and 85% after two, where A2A-DiT needs four, the flow and diffusion baselines thirty or more, and ACT never gets there.</figcaption>
         </figure>
         <figure class="chart" id="ch-eff">
           <p class="ct">Gain over FM-DiT, less data and smaller models</p>
           <div class="ctls"><div class="seg seg-a" role="group" aria-label="Setting"></div></div>
           <div class="plot"></div>
-          <figcaption><b>Figure 2.</b> Gain of ODE policy over FM-DiT in success rate (percentage points), by training epoch and by demonstrations per task or parameters, mean over three random seeds. The gain is positive in every cell and largest early in training, up to 65.7 points after one epoch.</figcaption>
+          <figcaption><b>Figure 2.</b> Gain of ODE policy over FM-DiT in success rate (percentage points), by training epoch and by demonstrations per task or parameters, mean over three random seeds. The gain is positive in every cell and largest early in training, up to 63.9 points after one epoch.</figcaption>
         </figure>
       </div>
       <div class="charts c2">
@@ -556,16 +557,16 @@ svg [data-s].dim{opacity:.12}
 
     <article class="block">
       <h3><span>02</span>Succeeds on real robots</h3>
-      <p class="lede">Tasks on four robots, from precise insertion to bimanual and walking manipulation. ODE policy has the highest success rate on all fourteen real-robot tasks, including the three cross-lab tasks under Generalizes. Each card compares it with the best baseline over 20 trials.</p>
+      <p class="lede">Tasks on four robots, from precise insertion to bimanual and walking manipulation. ODE policy has the highest success rate on all eighteen real-robot tasks, including the three cross-lab tasks under Generalizes. Each card compares it with the best baseline over 20 trials.</p>
       <div class="robot"><h4>Single-arm robot</h4><p>Franka Research 3, 40 demonstrations per task, 50 epochs</p></div>
       <div class="rtasks"><figure class="rt"><div class="tv"><video data-src="assets/video/cover/box.mp4" poster="assets/video/cover/box.jpg" muted loop playsinline preload="none" aria-label="Box packing, ODE policy"></video></div><figcaption><h4>Box packing</h4><p>Put a mango into a box and close the lid.</p><div class="sr2"><div class="b ours"><i style="width:95%"></i><span>ODE <b>95%</b></span></div><div class="b"><i style="width:75%"></i><span>A2A-DiT 75%</span></div></div></figcaption></figure><figure class="rt"><div class="tv"><video data-src="assets/video/cover/key.mp4" poster="assets/video/cover/key.jpg" muted loop playsinline preload="none" aria-label="Key hanging, ODE policy"></video></div><figcaption><h4>Key hanging</h4><p>Grasp a key and hang it on a hook.</p><div class="sr2"><div class="b ours"><i style="width:90%"></i><span>ODE <b>90%</b></span></div><div class="b"><i style="width:75%"></i><span>A2A-DiT 75%</span></div></div></figcaption></figure><figure class="rt"><div class="tv"><video data-src="assets/video/cover/sock.mp4" poster="assets/video/cover/sock.jpg" muted loop playsinline preload="none" aria-label="Sock folding, ODE policy"></video></div><figcaption><h4>Sock folding</h4><p>Fold a sock, put it into a drawer, close the drawer.</p><div class="sr2"><div class="b ours"><i style="width:75%"></i><span>ODE <b>75%</b></span></div><div class="b"><i style="width:40%"></i><span>FM-DiT 40%</span></div></div></figcaption></figure><figure class="rt"><div class="tv"><video data-src="assets/video/cover/insert.mp4" poster="assets/video/cover/insert.jpg" muted loop playsinline preload="none" aria-label="Block insertion, ODE policy"></video></div><figcaption><h4>Block insertion</h4><p>Insert a block into a matching hole.</p><div class="sr2"><div class="b ours"><i style="width:70%"></i><span>ODE <b>70%</b></span></div><div class="b"><i style="width:20%"></i><span>FM-DiT 20%</span></div></div></figcaption></figure></div>
       <div class="robot"><h4>Dual-arm robot</h4><p>Galaxea R1 Lite, joint actions, 300 epochs</p></div>
-      <div class="rtasks"><figure class="rt"><div class="tv"><video data-src="assets/video/cover/flower.mp4" poster="assets/video/cover/flower.jpg" muted loop playsinline preload="none" aria-label="Flower insertion, ODE policy"></video></div><figcaption><h4>Flower insertion</h4><p>Insert a thin stem into a narrow opening.</p><div class="sr2"><em>Poppy</em><div class="b ours"><i style="width:30%"></i><span>ODE <b>30%</b></span></div><div class="b"><i style="width:20%"></i><span>FM-DiT 20%</span></div></div><div class="sr2"><em>Dahlia</em><div class="b ours"><i style="width:60%"></i><span>ODE <b>60%</b></span></div><div class="b"><i style="width:40%"></i><span>FM-DiT 40%</span></div></div></figcaption></figure><figure class="rt"><div class="tv"><video data-src="assets/video/cover/microwave.mp4" poster="assets/video/cover/microwave.jpg" muted loop playsinline preload="none" aria-label="Bimanual microwave, ODE policy"></video></div><figcaption><h4>Bimanual microwave</h4><p>Bowl into the microwave, push it in, close the door. 34 demonstrations.</p><div class="sr2"><div class="b ours"><i style="width:75%"></i><span>ODE <b>75%</b></span></div><div class="b"><i style="width:20%"></i><span>FM-DiT 20%</span></div></div></figcaption></figure><figure class="rt"><div class="tv"><video data-src="assets/video/cover/flowers.mp4" poster="assets/video/cover/flowers.jpg" muted loop playsinline preload="none" aria-label="Two flowers, ODE policy"></video></div><figcaption><h4>Two flowers</h4><p>Insert two flowers one after the other, at least one inserted.</p><div class="sr2"><div class="b ours"><i style="width:55%"></i><span>ODE <b>55%</b></span></div><div class="b"><i style="width:20%"></i><span>FM-DiT 20%</span></div></div></figcaption></figure><figure class="rt"><div class="tv"><video data-src="assets/video/cover/drawer2.mp4" poster="assets/video/cover/drawer2.jpg" muted loop playsinline preload="none" aria-label="Drawer, either arm, ODE policy"></video></div><figcaption><h4>Drawer, either arm</h4><p>One arm puts an apple into the drawer, the other closes it. Both modes used.</p><div class="sr2"><div class="b ours"><i style="width:60%"></i><span>ODE <b>60%</b></span></div><div class="b"><i style="width:1%"></i><span>FM-DiT 0%</span></div></div></figcaption></figure></div>
+      <div class="rtasks r5"><figure class="rt"><div class="tv"><video data-src="assets/video/cover/flower.mp4" poster="assets/video/cover/flower.jpg" muted loop playsinline preload="none" aria-label="Flower insertion, ODE policy"></video></div><figcaption><h4>Flower insertion</h4><p>Insert a thin stem into a narrow opening.</p><div class="sr2"><em>Poppy</em><div class="b ours"><i style="width:30%"></i><span>ODE <b>30%</b></span></div><div class="b"><i style="width:20%"></i><span>FM-DiT 20%</span></div></div><div class="sr2"><em>Dahlia</em><div class="b ours"><i style="width:60%"></i><span>ODE <b>60%</b></span></div><div class="b"><i style="width:40%"></i><span>FM-DiT 40%</span></div></div></figcaption></figure><figure class="rt"><div class="tv"><video data-src="assets/video/cover/microwave.mp4" poster="assets/video/cover/microwave.jpg" muted loop playsinline preload="none" aria-label="Bimanual microwave, ODE policy"></video></div><figcaption><h4>Bimanual microwave</h4><p>Bowl into the microwave, push it in, close the door. 35 demonstrations.</p><div class="sr2"><div class="b ours"><i style="width:75%"></i><span>ODE <b>75%</b></span></div><div class="b"><i style="width:20%"></i><span>FM-DiT 20%</span></div></div></figcaption></figure><figure class="rt"><div class="tv"><video data-src="assets/video/cover/flowers.mp4" poster="assets/video/cover/flowers.jpg" muted loop playsinline preload="none" aria-label="Two flowers, ODE policy"></video></div><figcaption><h4>Two flowers</h4><p>Insert two flowers one after the other, at least one inserted.</p><div class="sr2"><div class="b ours"><i style="width:55%"></i><span>ODE <b>55%</b></span></div><div class="b"><i style="width:20%"></i><span>FM-DiT 20%</span></div></div></figcaption></figure><figure class="rt"><div class="tv"><video data-src="assets/video/cover/drawer2.mp4" poster="assets/video/cover/drawer2.jpg" muted loop playsinline preload="none" aria-label="Drawer, either arm, ODE policy"></video></div><figcaption><h4>Drawer, either arm</h4><p>One arm puts an apple into the drawer, the other closes it. Both modes used.</p><div class="sr2"><div class="b ours"><i style="width:60%"></i><span>ODE <b>60%</b></span></div><div class="b"><i style="width:1%"></i><span>FM-DiT 0%</span></div></div></figcaption></figure><figure class="rt"><div class="tv"><video data-src="assets/video/cover/towel.mp4" poster="assets/video/cover/towel.jpg" muted loop playsinline preload="none" aria-label="Towel folding, ODE policy"></video></div><figcaption><h4>Towel folding</h4><p>Fold a towel with both arms. 35 demonstrations.</p><div class="sr2"><div class="b ours"><i style="width:45%"></i><span>ODE <b>45%</b></span></div><div class="b"><i style="width:15%"></i><span>FM-DiT 15%</span></div></div></figcaption></figure></div>
       <div class="pairrow">
-        <div><div class="robot"><h4>Dexterous hand</h4><p>Sharpa North</p></div>
-        <div class="rtasks one"><figure class="rt"><div class="tv"><video data-src="assets/video/cover/can.mp4" poster="assets/video/cover/can.jpg" muted loop playsinline preload="none" aria-label="Can to plate, ODE policy"></video></div><figcaption><h4>Can to plate</h4><p>Pick up a can and place it on a plate. 50 demonstrations.</p><div class="sr2"><div class="b ours"><i style="width:90%"></i><span>ODE <b>90%</b></span></div><div class="b"><i style="width:70%"></i><span>FM-DiT 70%</span></div></div></figcaption></figure></div></div>
-        <div><div class="robot"><h4>Humanoid</h4><p>Unitree G1, action head of GR00T N1.7, 90 demonstrations per task</p></div>
-        <div class="rtasks two"><figure class="rt"><div class="tv"><video data-src="assets/video/cover/toy.mp4" poster="assets/video/cover/toy.jpg" muted loop playsinline preload="none" aria-label="Toy to sofa, ODE policy"></video></div><figcaption><h4>Toy to sofa</h4><p>Walk to a toy, squat to grasp it, and put it into a box on the sofa.</p><div class="sr2"><div class="b ours"><i style="width:60%"></i><span>ODE <b>60%</b></span></div><div class="b"><i style="width:35%"></i><span>GR00T 35%</span></div></div></figcaption></figure><figure class="rt"><div class="tv"><video data-src="assets/video/cover/hmw.mp4" poster="assets/video/cover/hmw.jpg" muted loop playsinline preload="none" aria-label="Humanoid microwave, ODE policy"></video></div><figcaption><h4>Humanoid microwave</h4><p>Grasp a rice ball, walk to the microwave, put it inside, close the door.</p><div class="sr2"><div class="b ours"><i style="width:70%"></i><span>ODE <b>70%</b></span></div><div class="b"><i style="width:30%"></i><span>GR00T 30%</span></div></div></figcaption></figure></div></div>
+        <div><div class="robot"><h4>Dexterous hand</h4><p>Sharpa North, 300 epochs</p></div>
+        <div class="rtasks one"><figure class="rt"><div class="tv"><video data-src="assets/video/cover/can.mp4" poster="assets/video/cover/can.jpg" muted loop playsinline preload="none" aria-label="Can to plate, ODE policy"></video></div><figcaption><h4>Can to plate</h4><p>Pick up a can and place it on a plate. 50 demonstrations.</p><div class="sr2"><div class="b ours"><i style="width:90%"></i><span>ODE <b>90%</b></span></div><div class="b"><i style="width:70%"></i><span>FM-DiT 70%</span></div></div></figcaption></figure><figure class="rt"><div class="tv"><video data-src="assets/video/cover/card.mp4" poster="assets/video/cover/card.jpg" muted loop playsinline preload="none" aria-label="Card dealing, ODE policy"></video></div><figcaption><h4>Card dealing</h4><p>Pick up a deck, hand it over, and deal four cards. Only 10 demonstrations.</p><div class="sr2"><div class="b ours"><i style="width:10%"></i><span>ODE <b>10%</b></span></div><div class="b"><i style="width:1%"></i><span>FM-DiT 0%</span></div></div></figcaption></figure></div></div>
+        <div><div class="robot"><h4>Humanoid</h4><p>Unitree G1 with Inspire hands, action head of GR00T N1.7, 78 to 90 demonstrations per task</p></div>
+        <div class="rtasks two"><figure class="rt"><div class="tv"><video data-src="assets/video/cover/toy.mp4" poster="assets/video/cover/toy.jpg" muted loop playsinline preload="none" aria-label="Toy to sofa, ODE policy"></video></div><figcaption><h4>Toy to sofa</h4><p>Walk to a toy, squat to grasp it, and put it into a box on the sofa.</p><div class="sr2"><div class="b ours"><i style="width:60%"></i><span>ODE <b>60%</b></span></div><div class="b"><i style="width:35%"></i><span>GR00T 35%</span></div></div></figcaption></figure><figure class="rt"><div class="tv"><video data-src="assets/video/cover/hmw.mp4" poster="assets/video/cover/hmw.jpg" muted loop playsinline preload="none" aria-label="Humanoid microwave, ODE policy"></video></div><figcaption><h4>Humanoid microwave</h4><p>Grasp a rice ball, walk to the microwave, put it inside, close the door.</p><div class="sr2"><div class="b ours"><i style="width:70%"></i><span>ODE <b>70%</b></span></div><div class="b"><i style="width:30%"></i><span>GR00T 30%</span></div></div></figcaption></figure><figure class="rt"><div class="tv"><video data-src="assets/video/cover/basket.mp4" poster="assets/video/cover/basket.jpg" muted loop playsinline preload="none" aria-label="Basket to desk, ODE policy"></video></div><figcaption><h4>Basket to desk</h4><p>Pick up a basket from a side table, walk to a desk, and place it there.</p><div class="sr2"><div class="b ours"><i style="width:95%"></i><span>ODE <b>95%</b></span></div><div class="b"><i style="width:60%"></i><span>GR00T 60%</span></div></div></figcaption></figure><figure class="rt"><div class="tv"><video data-src="assets/video/cover/pillow.mp4" poster="assets/video/cover/pillow.jpg" muted loop playsinline preload="none" aria-label="Pillow to sofa, ODE policy"></video></div><figcaption><h4>Pillow to sofa</h4><p>Carry a pillow from the bed to the sofa, learned from demonstrations full of pauses.</p><div class="sr2"><div class="b ours"><i style="width:60%"></i><span>ODE <b>60%</b></span></div><div class="b"><i style="width:20%"></i><span>GR00T 20%</span></div></div></figcaption></figure></div></div>
       </div>
     </article>
 
@@ -601,7 +602,7 @@ svg [data-s].dim{opacity:.12}
           <div class="chart mini" id="ch-r-acc"><div class="plot"></div></div>
           <div class="chart mini" id="ch-r-jerk"><div class="plot"></div></div>
         </div>
-        <figcaption><b>Figure 6.</b> One task per robot, box packing, the bimanual microwave, and can to plate, mean and std over episodes, with the human demonstrations as the dashed line. ODE policy generates a chunk 3.5 to 27× faster than the diffusion and flow matching baselines, and its measured motion is as smooth as the demonstrations or smoother, while the baselines reach up to 12× their jerk.</figcaption>
+        <figcaption><b>Figure 6.</b> One task per robot, box packing, the bimanual microwave, can to plate, and carrying a pillow, mean and std over episodes, with the human demonstrations as the dashed line. ODE policy generates a chunk 1.5 to 27× faster than the diffusion and flow matching baselines. The baselines command 3.8 to 14× higher acceleration at chunk boundaries, and their measured jerk is 1.5 to 12× higher, while the motion of ODE policy is as smooth as the demonstrations or smoother.</figcaption>
       </figure>
       <div class="charts c2">
         <figure class="chart" id="ch-time">
@@ -629,7 +630,7 @@ svg [data-s].dim{opacity:.12}
         <figure class="chart" id="ch-plus">
           <p class="ct">Visuomotor policies</p>
           <div class="legend"></div><div class="plot"></div>
-          <figcaption><b>Figure 9.</b> Robust early, 30.1% after one epoch against at most 22.6%. Three random seeds.</figcaption>
+          <figcaption><b>Figure 9.</b> Robust early, 34.7% after one epoch against at most 22.6%, and 65.0% at epoch 100 against at most 43.0%. Three random seeds.</figcaption>
         </figure>
         <figure class="chart" id="ch-plus-vla">
           <p class="ct">VLA (π<sub>0.5</sub>)</p>
@@ -668,7 +669,7 @@ svg [data-s].dim{opacity:.12}
         <figure class="chart" id="ch-nav-g">
           <p class="ct">Mode balance</p>
           <div class="legend"></div><div class="plot"></div>
-          <figcaption><b>Figure 14.</b> γ is 1 if the four routes are taken equally often and 0 if some route is never taken. After one epoch, 0.54 against 0.14 for FM-DiT.</figcaption>
+          <figcaption><b>Figure 14.</b> γ is 1 if the four routes are taken equally often and 0 if some route is never taken. After one epoch, 0.46 against 0.14 for FM-DiT.</figcaption>
         </figure>
       </div>
     </article>
@@ -685,10 +686,10 @@ svg [data-s].dim{opacity:.12}
       <div class="mrow">
         <div class="step-txt">
           <h3><span>1</span>Learn a velocity, not an action</h3>
-          <p>The images and the instruction are encoded into an embedding $\mathbf z_t$, as in any policy. The network $\mathbf f_\theta$ outputs how the action should change, given the action $\mathbf a(t)$ the robot is commanded to reach and its proprioception $\mathbf s_t$. Time $t$ is the physical time of the robot.</p>
+          <p>The images, the instruction, and the proprioception are encoded into an embedding $\mathbf z_t$, as in any policy. The network $\mathbf f_\theta$ outputs how the action should change, given the action $\mathbf a(t)$ the robot is commanded to reach. Time $t$ is the physical time of the robot. A binary gripper becomes a short ramp in the training targets and is integrated like the other actions.</p>
           <p>Because the field sees the current action, each step depends on where the motion has arrived. A direct-action policy outputs a whole chunk at once and cannot react to its own intermediate actions.</p>
         </div>
-        <div class="eqn">$$\dot{\mathbf a}(t)=\mathbf f_\theta\big(\mathbf a(t),\,\mathbf s_t,\,\mathbf z_t\big)$$</div>
+        <div class="eqn">$$\dot{\mathbf a}(t)=\mathbf f_\theta\big(\mathbf a(t),\,\mathbf z_t\big)$$</div>
       </div>
       <figure class="anim">
         <canvas id="fig1" aria-label="Animated figure, direct-action policies emit whole chunks with jumps, ODE policy integrates a continuous path"></canvas>
@@ -699,9 +700,9 @@ svg [data-s].dim{opacity:.12}
       <div class="mrow">
         <div class="step-txt">
           <h3><span>2</span>Integrate chunk by chunk</h3>
-          <p>Every $H=8$ steps, the policy reads the observation once and holds $\mathbf z_t$ and $\mathbf s_t$ fixed. It then integrates the field with RK4, one action after another, and the next chunk starts from the last integrated action. This gives three benefits.</p>
+          <p>Every $H=8$ steps, the policy reads the observation once and holds $\mathbf z_t$ fixed. It then integrates the field with <i>Euler</i>, one action after another, and the next chunk starts from the last integrated action. This gives three benefits.</p>
         </div>
-        <div class="eqn">$$\hat{\mathbf a}_{t+k+1}=\hat{\mathbf a}_{t+k}+\int_{t+k}^{t+k+1}\mathbf f_\theta\big(\mathbf a(t'),\mathbf s_t,\mathbf z_t\big)\,\mathrm dt'$$</div>
+        <div class="eqn">$$\hat{\mathbf a}_{t+k+1}=\hat{\mathbf a}_{t+k}+\int_{t+k}^{t+k+1}\mathbf f_\theta\big(\mathbf a(t'),\mathbf z_t\big)\,\mathrm dt'$$</div>
       </div>
       <div class="cards c3">
         <article class="demo"><canvas id="d-smooth" aria-label="Consecutive chunks join into one continuous path"></canvas>
@@ -736,7 +737,7 @@ svg [data-s].dim{opacity:.12}
           <h3><span>4</span>Optional diversity head</h3>
           <p>A deterministic field averages distinct behaviors, e.g., passing an obstacle on the left or on the right, and heads into the obstacle. A small head reads the features of the field once per chunk and samples a direction $\boldsymbol\epsilon$ with a rate $\boldsymbol\lambda_k$ per step, which tilts the field toward one route. It is trained on detached inputs, so the gradient of $\mathbf f_\theta$ stays unchanged.</p>
         </div>
-        <div class="eqn">$$\dot{\mathbf a}(t')=\mathbf f_\theta\big(\mathbf a(t'),\mathbf s_t,\mathbf z_t\big)+\boldsymbol\lambda_k\odot\boldsymbol\epsilon$$</div>
+        <div class="eqn">$$\dot{\mathbf a}(t')=\mathbf f_\theta\big(\mathbf a(t'),\mathbf z_t\big)+\boldsymbol\lambda_k\odot\boldsymbol\epsilon$$</div>
       </div>
       <figure class="anim">
         <canvas id="fig2" aria-label="Animated figure of the diversity head, a sampled offset tilts the field toward one route"></canvas>
@@ -747,9 +748,9 @@ svg [data-s].dim{opacity:.12}
       <div class="mrow">
         <div class="step-txt">
           <h3><span>5</span>The same field as an RL actor</h3>
-          <p>In RL, the field acts at every control step ($H=1$) and takes one <i>Euler</i> step from the previous action. Only the actor is replaced, and the RL algorithm trains the field through this step. In SuperMimic, which backpropagates the return through 32 imagined steps of a world model, the identity in $\partial\hat{\mathbf a}_t/\partial\hat{\mathbf a}_{t-1}$ carries the gradient to early actions without decay.</p>
+          <p>In RL, the field acts at every control step ($H=1$) and takes one <i>Euler</i> step from the previous action. Only the actor is replaced, and the RL algorithm trains the field through this step. In SuperMimic, which backpropagates the return through imagined rollouts of a world model, the identity in $\partial\hat{\mathbf a}_t/\partial\hat{\mathbf a}_{t-1}$ carries the gradient to early actions without decay.</p>
         </div>
-        <div class="eqn">$$\hat{\mathbf a}_t=\hat{\mathbf a}_{t-1}+\mathbf f_\theta\big(\hat{\mathbf a}_{t-1},\mathbf s_t,\mathbf z_t\big)$$</div>
+        <div class="eqn">$$\hat{\mathbf a}_t=\hat{\mathbf a}_{t-1}+\mathbf f_\theta\big(\hat{\mathbf a}_{t-1},\mathbf z_t\big)$$</div>
       </div>
     </article>
   </div>
@@ -1075,14 +1076,12 @@ function rich(g, parts, x, y, col, size, weight = 600, family = MONO, italic = t
       const u = (clock * 0.3) % 1; g.strokeStyle = c.blue; g.lineWidth = 2.2; g.beginPath();
       for (let i = 0; i <= 30 * u; i++){ const uu = i / 30; const [px, py] = map(uu, 0.25 * Math.sin(5 * uu)); i ? g.lineTo(px, py) : g.moveTo(px, py); } g.stroke();
       const [qx, qy] = map(u, 0.25 * Math.sin(5 * u)); g.fillStyle = c.blue; g.beginPath(); g.arc(qx, qy, 4, 0, 7); g.fill();
-      rich(g, [['ȧ = f'], ['θ', 1], ['(a, s, z)']], ox + 336, y + 50, c.ink, 13);
+      rich(g, [['ȧ = f'], ['θ', 1], ['(a, z)']], ox + 336, y + 50, c.ink, 13);
       arrow(g, ox + 396, y, ox + 414, y, c.muted); txt(g, '∫dt', ox + 440, y, c.blue, 16, 600, 'center', MONO);
       arrow(g, ox + 464, y, ox + 486, y, c.muted);
       const pulse = 0.5 + 0.5 * Math.sin(clock * 10); g.fillStyle = hexA(c.blue, .2 + .2 * pulse); g.beginPath(); g.arc(ox + 502, y, 10, 0, 7); g.fill();
       g.fillStyle = c.blue; g.beginPath(); g.arc(ox + 502, y, 5, 0, 7); g.fill();
       txt(g, 'one action', ox + 494, y + 34, c.muted, 11.5, 500, 'center', MONO); txt(g, 'at a time', ox + 494, y + 50, c.muted, 11.5, 500, 'center', MONO);
-      // proprioception enters the field directly
-      arrow(g, ox + 228, y + 58, ox + 252, y + 28, c.muted); txt(g, 's', ox + 222, y + 66, c.ink, 13, 500, 'center', MONO, true);
     }
     timeline(g, c, ox + 20, oy + 220, 490, 190, kind, prog);
   }
@@ -1313,6 +1312,7 @@ Object.assign(COL, { 'ODE': COL['ODE-UNet'], 'A2A': COL['A2A-DiT'], 'FM': COL['F
   'DDIM-UNet': COL['FM-UNet'], 'Discrete': ramp(0.42) });
 const NAME = { 'ODE-UNet': 'ODE (ours)', 'ODE': 'ODE (ours)', 'FM-R': 'FM, random init.', 'Discrete': 'Direct-action actor' };
 const nm = m => NAME[m] || m;
+COL['GR00T'] = COL['FM-DiT'];  // the original head of GR00T N1.7, flow matching
 const fmt1 = v => String(Math.abs(v) >= 100 ? Math.round(v) : +v.toPrecision(3));
 
 // one tooltip for every chart
@@ -1502,7 +1502,7 @@ if (D){
       x: { min: 2, max: 2000, log: true, ticks: [2, 10, 100, 1000], label: 'Time per chunk of 8 actions (ms, log scale)' },
       y: { min: 72, max: 97, ticks: [75, 80, 85, 90, 95], label: 'Success rate (%)' }, band: { from: 400, label: 'slower than 20 Hz' } }); }
   // 03 real robots, one task per robot
-  { const host = C('ch-real'); let rb = 0, w = 0; const RB = ['single', 'dual', 'hand'];
+  { const host = C('ch-real'); let rb = 0, w = 0; const RB = ['single', 'dual', 'hand', 'humanoid'];
     const draw = () => { const R = D.real[RB[rb]];
       const rows = key => R.order.slice().reverse().map(m => ({ key: m, name: nm(m), color: COL[m], v: R[key][m][0], sd: R[key][m][1], ours: m === 'ODE' }));
       barChart(C('ch-r-time'), { rows: rows('time'), left: 108, x: { min: 1, max: 1000, log: true, ticks: [1, 10, 100, 1000], label: 'Per chunk on one ' + R.gpu + ' (ms)' } });
@@ -1510,7 +1510,7 @@ if (D){
       barChart(C('ch-r-jerk'), { rows: rows('jerk'), left: 108, x: { min: 0, max: R.jerk_max, ticks: [0, R.jerk_max / 2, R.jerk_max], label: 'RMS jerk of the arm joints (rad/s³)' }, ref: { v: R.jerk_demo, label: 'human' } }); };
     const seg = (sel, labels, set) => { const S = host.querySelector(sel); labels.forEach((l, i) => { const b = document.createElement('button'); b.textContent = l; b.setAttribute('aria-pressed', i === 0);
       b.onclick = () => { set(i); S.querySelectorAll('button').forEach((x, j) => x.setAttribute('aria-pressed', j === i)); draw(); }; S.appendChild(b); }); };
-    seg('.seg-robot', ['Single-arm', 'Dual-arm', 'Dexterous hand'], i => rb = i);
+    seg('.seg-robot', ['Single-arm', 'Dual-arm', 'Dexterous hand', 'Humanoid'], i => rb = i);
     seg('.seg-acc', ['At chunk boundaries', 'Inside chunks'], i => w = i);
     draw(); }
   // 02 at scale
